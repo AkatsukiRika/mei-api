@@ -37,6 +37,7 @@ import { useAuthStore } from '@/stores/auth-store'
 import { defaultTopNavLinks } from '../config/top-nav.config'
 import type { TopNavLink } from '../types'
 import { HeaderLogo } from './header-logo'
+import { MaidBowIcon, MaidWelcomeBadge } from './maid-cafe-decor'
 
 const AUTH_PROMPT_SECONDS = 5
 
@@ -233,8 +234,13 @@ export function PublicHeader(props: PublicHeaderProps) {
                     displaySiteName
                   )}
                 </span>
+                <MaidBowIcon className='size-4' />
               </Link>
               <SystemUpdateAction presentation='version' />
+              <MaidWelcomeBadge
+                compact
+                className='ms-1 hidden xl:inline-flex'
+              />
             </div>
 
             {/* Desktop nav */}

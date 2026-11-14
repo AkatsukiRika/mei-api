@@ -27,7 +27,12 @@ export const THEME_PRESETS = [
   {
     value: 'default',
     name: 'Default',
-    swatches: ['oklch(0.72 0.18 250)', 'oklch(0.7 0.12 280)'],
+    swatches: ['oklch(0.62 0.195 352)', 'oklch(0.945 0.032 355)'],
+  },
+  {
+    value: 'maid-cafe',
+    name: 'Maid Cafe',
+    swatches: ['oklch(0.962 0.024 354)', 'oklch(0.62 0.195 352)'],
   },
   {
     // Inspired by Anthropic's official brand language: warm cream canvas

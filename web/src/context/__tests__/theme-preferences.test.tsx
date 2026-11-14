@@ -55,6 +55,12 @@ function ThemeControls() {
       >
         Anthropic preset
       </button>
+      <button
+        type='button'
+        onClick={() => customization.setPreset('maid-cafe')}
+      >
+        Maid Cafe preset
+      </button>
       <button type='button' onClick={() => customization.setPreset('default')}>
         Default preset
       </button>
@@ -249,6 +255,21 @@ describe('theme preference persistence', () => {
       expect(localStorage.getItem(key)).toBe(value)
     }
     expect(localStorage.getItem('stale-ui-cache')).toBeNull()
+  })
+
+  it('applies and persists the maid-cafe preset across remounts', async () => {
+    const user = userEvent.setup()
+    const first = render(<ThemeFixture />)
+
+    await user.click(screen.getByRole('button', { name: 'Maid Cafe preset' }))
+
+    expect(document.body).toHaveAttribute('data-theme-preset', 'maid-cafe')
+    expect(localStorage.getItem('newapi:theme:v1:preset')).toBe('maid-cafe')
+
+    first.unmount()
+    render(<ThemeFixture />)
+
+    expect(document.body).toHaveAttribute('data-theme-preset', 'maid-cafe')
   })
 })
 

@@ -428,8 +428,10 @@ For commercial licensing, please contact support@quantumnous.com
  *     cards/borders rather than tinting them with the clay accent).
  *   - `simple-large`: keeps intentionally neutral, high-contrast surfaces. */
 [data-theme-preset]:not([data-theme-preset='default']):not(
-  [data-theme-preset='anthropic']
-):not([data-theme-preset='simple-large']) {
+    [data-theme-preset='anthropic']
+  ):not([data-theme-preset='simple-large']):not(
+    [data-theme-preset='maid-cafe']
+  ) {
   --card: color-mix(in oklch, var(--primary) 3%, var(--background));
   --popover: color-mix(in oklch, var(--primary) 5%, var(--background));
   --muted: color-mix(in oklch, var(--primary) 7%, var(--background));
@@ -454,7 +456,9 @@ For commercial licensing, please contact support@quantumnous.com
 .dark
   [data-theme-preset]:not([data-theme-preset='default']):not(
     [data-theme-preset='anthropic']
-  ):not([data-theme-preset='simple-large']) {
+  ):not([data-theme-preset='simple-large']):not(
+    [data-theme-preset='maid-cafe']
+  ) {
   --card: color-mix(in oklch, var(--primary) 8%, var(--background));
   --popover: color-mix(in oklch, var(--primary) 12%, var(--background));
   --muted: color-mix(in oklch, var(--primary) 12%, var(--background));
@@ -469,6 +473,81 @@ For commercial licensing, please contact support@quantumnous.com
   --sidebar: color-mix(in oklch, var(--primary) 5%, var(--background));
   --sidebar-accent: color-mix(in oklch, var(--primary) 18%, var(--background));
   --sidebar-border: color-mix(in oklch, var(--primary) 22%, var(--background));
+}
+
+/* ── Maid Cafe ────────────────────────────────────────────────────────── */
+[data-theme-preset='maid-cafe'] {
+  --background: oklch(0.986 0.012 355);
+  --foreground: oklch(0.24 0.045 350);
+  --card: oklch(0.996 0.006 355);
+  --card-foreground: oklch(0.24 0.045 350);
+  --popover: oklch(0.997 0.005 355);
+  --popover-foreground: oklch(0.24 0.045 350);
+  --primary: oklch(0.62 0.195 352);
+  --primary-foreground: oklch(0.995 0.005 355);
+  --secondary: oklch(0.945 0.032 355);
+  --secondary-foreground: oklch(0.35 0.095 350);
+  --muted: oklch(0.962 0.02 355);
+  --muted-foreground: oklch(0.47 0.045 350);
+  --accent: color-mix(in oklch, var(--primary) 13%, var(--background));
+  --accent-foreground: oklch(0.28 0.065 350);
+  --border: oklch(0.91 0.032 352);
+  --input: oklch(0.905 0.035 352);
+  --ring: oklch(0.68 0.175 352);
+  --info: oklch(0.64 0.175 356);
+  --chart-1: oklch(0.66 0.185 356);
+  --chart-2: oklch(0.76 0.135 18);
+  --chart-3: oklch(0.75 0.14 344);
+  --chart-4: oklch(0.78 0.12 68);
+  --chart-5: oklch(0.72 0.12 165);
+  --overview-accent-1: oklch(0.7 0.175 358);
+  --overview-accent-2: oklch(0.79 0.125 20);
+  --overview-accent-3: oklch(0.77 0.135 346);
+  --sidebar: oklch(0.974 0.018 354);
+  --sidebar-foreground: oklch(0.26 0.045 350);
+  --sidebar-primary: oklch(0.62 0.195 352);
+  --sidebar-primary-foreground: oklch(0.995 0.005 355);
+  --sidebar-accent: color-mix(in oklch, var(--primary) 14%, var(--background));
+  --sidebar-accent-foreground: oklch(0.42 0.145 352);
+  --sidebar-border: oklch(0.912 0.03 352);
+  --sidebar-ring: oklch(0.62 0.195 352);
+  --radius: 1.125rem;
+}
+.dark [data-theme-preset='maid-cafe'] {
+  --background: oklch(0.215 0.024 350);
+  --foreground: oklch(0.965 0.014 355);
+  --card: oklch(0.255 0.028 350);
+  --card-foreground: oklch(0.965 0.014 355);
+  --popover: oklch(0.275 0.03 350);
+  --popover-foreground: oklch(0.965 0.014 355);
+  --primary: oklch(0.74 0.165 352);
+  --primary-foreground: oklch(0.19 0.04 350);
+  --secondary: oklch(0.315 0.038 350);
+  --secondary-foreground: oklch(0.94 0.025 355);
+  --muted: oklch(0.295 0.03 350);
+  --muted-foreground: oklch(0.78 0.028 352);
+  --accent: color-mix(in oklch, var(--primary) 20%, var(--background));
+  --accent-foreground: oklch(0.975 0.012 355);
+  --border: oklch(0.88 0.06 352 / 15%);
+  --input: oklch(0.88 0.06 352 / 22%);
+  --ring: oklch(0.74 0.165 352);
+  --info: oklch(0.75 0.15 356);
+  --chart-1: oklch(0.75 0.165 356);
+  --chart-2: oklch(0.8 0.125 18);
+  --chart-3: oklch(0.78 0.135 345);
+  --chart-4: oklch(0.8 0.12 68);
+  --chart-5: oklch(0.76 0.12 165);
+  --overview-accent-1: oklch(0.75 0.165 356);
+  --overview-accent-2: oklch(0.8 0.125 18);
+  --overview-accent-3: oklch(0.78 0.135 345);
+  --sidebar: oklch(0.198 0.024 350);
+  --sidebar-foreground: oklch(0.95 0.015 355);
+  --sidebar-primary: oklch(0.74 0.165 352);
+  --sidebar-primary-foreground: oklch(0.19 0.04 350);
+  --sidebar-accent: color-mix(in oklch, var(--primary) 20%, var(--background));
+  --sidebar-accent-foreground: oklch(0.94 0.03 355);
+  --sidebar-border: oklch(0.88 0.06 352 / 14%);
+  --sidebar-ring: oklch(0.74 0.165 352);
 }
 
 /* ── Anthropic ────────────────────────────────────────────────────────── */

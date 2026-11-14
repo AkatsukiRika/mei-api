@@ -19,13 +19,15 @@ For commercial licensing, please contact support@quantumnous.com
 import { SidebarTrigger } from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
 
+import { MaidLaceTrim } from './maid-cafe-decor'
+
 type HeaderProps = React.HTMLAttributes<HTMLElement>
 
 export function Header({ className, children, ...props }: HeaderProps) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-40 h-[var(--app-header-height,3rem)] w-full shrink-0 bg-transparent',
+        'bg-sidebar/85 border-border/60 sticky top-0 z-40 h-[var(--app-header-height,3rem)] w-full shrink-0 border-b backdrop-blur-md',
         className
       )}
       {...props}
@@ -34,6 +36,10 @@ export function Header({ className, children, ...props }: HeaderProps) {
         <SidebarTrigger variant='ghost' className='size-8' />
         {children}
       </div>
+      <MaidLaceTrim
+        position='bottom'
+        className='absolute inset-x-0 top-full z-10 opacity-75'
+      />
     </header>
   )
 }

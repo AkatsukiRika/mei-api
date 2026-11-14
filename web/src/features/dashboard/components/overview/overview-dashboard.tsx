@@ -188,10 +188,10 @@ function SetupGuideBackdrop(props: { compact?: boolean }) {
     <>
       <div
         className={cn(
-          'pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_48%_120%_at_78%_0%,color-mix(in_oklch,var(--overview-accent-1)_14%,transparent)_0%,transparent_62%),linear-gradient(112deg,color-mix(in_oklch,var(--card)_94%,var(--overview-accent-2)_6%)_0%,color-mix(in_oklch,var(--card)_94%,var(--overview-accent-3)_6%)_48%,color-mix(in_oklch,var(--background)_90%,var(--overview-accent-1)_10%)_100%)] dark:opacity-60',
+          'pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_52%_120%_at_80%_0%,color-mix(in_oklch,var(--overview-accent-1)_20%,transparent)_0%,transparent_65%),linear-gradient(115deg,color-mix(in_oklch,var(--card)_90%,var(--overview-accent-2)_10%)_0%,color-mix(in_oklch,var(--card)_91%,var(--overview-accent-3)_9%)_50%,color-mix(in_oklch,var(--secondary)_75%,var(--card)_25%)_100%)] dark:opacity-65',
           props.compact
-            ? '[mask-image:linear-gradient(90deg,black_0%,black_48%,transparent_74%)] opacity-55'
-            : 'opacity-85'
+            ? '[mask-image:linear-gradient(90deg,black_0%,black_48%,transparent_74%)] opacity-60'
+            : 'opacity-90'
         )}
         aria-hidden='true'
       />

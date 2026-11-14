@@ -25,6 +25,12 @@ import { toast } from 'sonner'
 
 import { ErrorState } from '@/components/error-state'
 import { LanguageSwitcher } from '@/components/language-switcher'
+import {
+  MaidBowIcon,
+  MaidCafeBackdrop,
+  MaidLaceTrim,
+  MaidWelcomeBadge,
+} from '@/components/layout/components/maid-cafe-decor'
 import { LoadingState } from '@/components/loading-state'
 import {
   Card,
@@ -283,28 +289,33 @@ export function SetupWizard() {
   }
 
   return (
-    <div className='bg-muted/40 relative min-h-svh py-10'>
-      <div className='absolute top-4 right-4 sm:top-6 sm:right-6'>
+    <div className='bg-background relative min-h-svh overflow-hidden py-10'>
+      <MaidCafeBackdrop />
+      <div className='absolute top-4 right-4 z-10 sm:top-6 sm:right-6'>
         <LanguageSwitcher />
       </div>
       <div className='container mx-auto flex max-w-5xl flex-col gap-8 px-4 sm:px-6'>
         <div className='flex flex-col items-center gap-3'>
-          <div className='relative h-12 w-12'>
+          <MaidWelcomeBadge />
+          <div className='border-primary/25 relative h-12 w-12 rounded-full border p-0.5'>
             {systemConfigLoading ? (
               <Skeleton className='absolute inset-0 rounded-full' />
             ) : (
               <img
                 src={logo}
                 alt={t('System logo')}
-                className='h-12 w-12 rounded-full object-cover shadow-sm'
+                className='h-full w-full rounded-full object-cover shadow-sm'
               />
             )}
           </div>
           {systemConfigLoading ? (
             <Skeleton className='h-7 w-40' />
           ) : (
-            <h1 className='text-2xl font-semibold tracking-tight'>
-              {t('Initialize')} {systemName}
+            <h1 className='inline-flex items-center gap-2 text-2xl font-semibold tracking-tight'>
+              <span>
+                {t('Initialize')} {systemName}
+              </span>
+              <MaidBowIcon className='size-5' />
             </h1>
           )}
           <p className='text-muted-foreground text-center text-sm sm:text-base'>
@@ -314,8 +325,9 @@ export function SetupWizard() {
           </p>
         </div>
 
-        <Card className='shadow-lg'>
-          <CardHeader className='space-y-2'>
+        <Card className='border-border/80 overflow-hidden shadow-lg'>
+          <MaidLaceTrim position='bottom' showCenterBow />
+          <CardHeader className='space-y-2 pt-4'>
             <CardTitle className='text-xl font-semibold'>
               {t('System setup wizard')}
             </CardTitle>

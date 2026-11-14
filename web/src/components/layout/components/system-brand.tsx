@@ -28,6 +28,8 @@ import { useStatus } from '@/hooks/use-status'
 import { useSystemConfig } from '@/hooks/use-system-config'
 import { cn } from '@/lib/utils'
 
+import { MaidBowIcon } from './maid-cafe-decor'
+
 type SystemBrandProps = {
   defaultName?: string
   defaultVersion?: string
@@ -73,6 +75,7 @@ export function SystemBrand(props: SystemBrandProps) {
           />
         </div>
         <span className='max-w-[12rem] truncate'>{name}</span>
+        <MaidBowIcon className='size-3.5' />
       </Link>
     )
   }
@@ -93,7 +96,10 @@ export function SystemBrand(props: SystemBrandProps) {
             />
           </div>
           <div className='grid flex-1 text-start text-sm leading-tight group-data-[collapsible=icon]:hidden'>
-            <span className='truncate font-semibold'>{name}</span>
+            <span className='inline-flex items-center gap-1 truncate font-semibold'>
+              <span className='truncate'>{name}</span>
+              <MaidBowIcon className='size-3.5' />
+            </span>
             <span className='truncate text-xs'>{version}</span>
           </div>
         </SidebarMenuButton>

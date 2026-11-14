@@ -281,7 +281,7 @@ function PresetConfig() {
                 style={{
                   background:
                     preset.value === 'default'
-                      ? 'linear-gradient(135deg, oklch(0.68 0.2 25) 0%, oklch(0.8 0.17 85) 25%, oklch(0.72 0.18 155) 50%, oklch(0.66 0.19 245) 75%, oklch(0.68 0.2 315) 100%)'
+                      ? 'linear-gradient(135deg, oklch(0.96 0.03 354) 0%, oklch(0.84 0.11 354) 45%, oklch(0.62 0.195 352) 100%)'
                       : `linear-gradient(135deg, ${preset.swatches[0]} 0%, ${preset.swatches[1] ?? preset.swatches[0]} 100%)`,
                 }}
               />

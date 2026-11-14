@@ -745,3 +745,66 @@ For commercial licensing, please contact support@quantumnous.com
     display: none;
   }
 }
+
+/* ── Maid Cafe decorative lace & textures ── */
+.maid-lace-scallop-bottom {
+  background-image:
+    radial-gradient(
+      circle at 8px 0,
+      color-mix(in oklch, var(--primary) 16%, var(--card)) 6px,
+      color-mix(in oklch, var(--primary) 34%, transparent) 6.5px,
+      transparent 7.2px
+    ),
+    radial-gradient(
+      circle at 8px 2px,
+      color-mix(in oklch, var(--primary) 42%, transparent) 1.3px,
+      transparent 1.9px
+    );
+  background-size: 16px 9px;
+  background-repeat: repeat-x;
+}
+
+.maid-lace-scallop-top {
+  background-image:
+    radial-gradient(
+      circle at 8px 9px,
+      color-mix(in oklch, var(--primary) 16%, var(--card)) 6px,
+      color-mix(in oklch, var(--primary) 34%, transparent) 6.5px,
+      transparent 7.2px
+    ),
+    radial-gradient(
+      circle at 8px 7px,
+      color-mix(in oklch, var(--primary) 42%, transparent) 1.3px,
+      transparent 1.9px
+    );
+  background-size: 16px 9px;
+  background-repeat: repeat-x;
+}
+
+.maid-polka-pattern {
+  background-image: radial-gradient(
+    color-mix(in oklch, var(--primary) 18%, transparent) 1.25px,
+    transparent 1.25px
+  );
+  background-size: 22px 22px;
+}
+
+@keyframes maid-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+.maid-float-slow {
+  animation: maid-float 5.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maid-float-slow {
+    animation: none;
+  }
+}

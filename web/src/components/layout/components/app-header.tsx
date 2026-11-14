@@ -28,6 +28,7 @@ import { useTopNavLinks } from '@/hooks/use-top-nav-links'
 import { defaultTopNavLinks } from '../config/top-nav.config'
 import type { TopNavLink } from '../types'
 import { Header } from './header'
+import { MaidWelcomeBadge } from './maid-cafe-decor'
 import { SystemBrand } from './system-brand'
 import { TopNav } from './top-nav'
 
@@ -116,6 +117,7 @@ export function AppHeader({
       <div className='@container/system-brand flex min-w-0 flex-1 items-center gap-1'>
         <SystemBrand variant='inline' />
         <SystemUpdateAction presentation='version' />
+        <MaidWelcomeBadge compact className='ms-1.5 hidden xl:inline-flex' />
       </div>
 
       {leftContent ? (
